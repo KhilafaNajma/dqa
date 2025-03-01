@@ -1,0 +1,341 @@
+/* Global Style */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: black;
+    color: white;
+    overflow-x: hidden;
+}
+
+/* Background Stars */
+.stars, .stars2, .stars3 {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.stars {
+    background: url('/img/stars2.png') repeat;
+    animation: twinkle 5s infinite;
+    opacity: 0.7;
+}
+
+.stars2 {
+    background: url('/img/stars2.png') repeat;
+    background-size: 3px 3px;
+    animation: twinkle 7s infinite;
+    opacity: 0.7;
+}
+
+.stars3 {
+    background: url('/img/stars2.png') repeat;
+    background-size: 4px 4px;
+    animation: twinkle 9s infinite;
+    opacity: 0.5;
+}
+
+/* Twinkling Effect */
+@keyframes twinkle {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.6; }
+}
+
+/* Header & Navigation */
+header {
+    display: flex;
+    justify-content: flex-end;
+    padding: 1rem;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+}
+
+#menu-icon {
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: white;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    width: 200px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+}
+
+nav.open { right: 0; }
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li { margin: 1rem 0; }
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.2rem;
+}
+
+/* Main Content */
+main {
+    padding: 2rem;
+    margin-top: 4rem;
+    text-align: center;
+}
+
+/* Quote Container */
+.quote-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Quote Link */
+.quote-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.quote-card {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 1.5rem;
+    margin: 1rem 0;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+
+.quote-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+}
+
+.quote-text {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.quote-author {
+    color: #888;
+    font-style: italic;
+}
+
+.quote-date {
+    font-size: 0.8rem;
+    color: #666;
+    margin-top: 0.5rem;
+}
+
+/* Quote Detail Page */
+.quote-detail {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 1rem;
+}
+
+.quote-card.expanded {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    cursor: default;
+}
+
+.quote-card.expanded:hover {
+    transform: none;
+}
+
+.quote-card.expanded .quote-text {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.back-button {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    text-decoration: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    margin-top: 1rem;
+    transition: background 0.3s;
+}
+
+.back-button:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Form Styles */
+.quote-form {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #888;
+    font-size: 0.9rem;
+}
+
+.quote-form textarea,
+.quote-form input[type="text"] {
+    width: 100%;
+    padding: 0.8rem;
+    margin: 0.5rem 0;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    border-radius: 5px;
+}
+
+.quote-form textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.quote-form textarea#description {
+    min-height: 100px;
+}
+
+.quote-form button {
+    background: #4CAF50;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.quote-form button:hover {
+    background: #45a049;
+}
+
+/* Messages */
+.message {
+    padding: 1rem;
+    margin: 1rem 0;
+    border-radius: 5px;
+}
+
+.success {
+    background: rgba(76, 175, 80, 0.3);
+    border: 1px solid #4CAF50;
+}
+
+.error {
+    background: rgba(244, 67, 54, 0.3);
+    border: 1px solid #f44336;
+}
+
+.info {
+    background: rgba(33, 150, 243, 0.3);
+    border: 1px solid #2196F3;
+}
+
+/* Tab Styles */
+.tab-container {
+    margin: 2rem 0;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.tab-buttons {
+    display: flex;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.tab-button {
+    background: none;
+    border: none;
+    color: #888;
+    padding: 1rem 2rem;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s;
+    flex: 1;
+}
+
+.tab-button:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: white;
+}
+
+.tab-button.active {
+    color: white;
+    background: rgba(255, 255, 255, 0.1);
+    border-bottom: 2px solid #4CAF50;
+}
+
+.tab-content {
+    padding: 2rem;
+}
+
+.tab-pane {
+    display: none;
+}
+
+.tab-pane.active {
+    display: block;
+}
+
+.quote-description {
+    color: #888;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Disqus Container */
+#disqus_thread {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 2rem;
+    border-radius: 10px;
+    margin-top: 2rem;
+    min-height: 300px;
+}
+
+/* Quote Story */
+.quote-story {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.quote-story h3 {
+    color: #888;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+.quote-story p {
+    color: white;
+    line-height: 1.6;
+    white-space: pre-line;
+}
